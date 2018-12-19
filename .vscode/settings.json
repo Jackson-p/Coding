@@ -1,0 +1,27 @@
+{
+    "files.associations": {
+        "ratio": "cpp",
+        "ostream": "cpp",
+        "iosfwd": "cpp",
+        "iterator": "cpp",
+        "vector": "cpp",
+        "__split_buffer": "cpp",
+        "bitset": "cpp",
+        "initializer_list": "cpp",
+        "string": "cpp",
+        "string_view": "cpp",
+        "utility": "cpp",
+        "chrono": "cpp",
+        "algorithm": "cpp",
+        "__locale": "cpp",
+        "memory": "cpp",
+        "system_error": "cpp",
+        "type_traits": "cpp",
+        "iostream": "cpp"
+    },
+    "emmet.syntaxProfiles": {
+        "javascript": "jsx"
+    },
+    "python.linting.enabled": true,
+    "python.pythonPath": "/usr/local/bin/python3"
+}
