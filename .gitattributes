@@ -1,0 +1,5 @@
+*.cpp linguist-language=all
+*.py linguist-language=all
+*.js linguist-language=all
+*.css linguist-language=all
+*.html linguist-language=all

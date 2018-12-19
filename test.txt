@@ -16,6 +16,7 @@ React源码分析
 demo:
 
 使用node建立本地服务器访问静态文件，恩就是像python3 的http-server的那个效果
+个人网站我觉得需要优化一下，从速度啊，打包啊，之类的
 
 
 -------------
@@ -25,5 +26,6 @@ less
 css里面的nth-of-child和nth-of-type还不错哦
 input元素在div中居中的问题
 typescript
+https://stackblitz.com/ 不错的React在线环境
 
 -------------
