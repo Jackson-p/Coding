@@ -27,5 +27,15 @@ css里面的nth-of-child和nth-of-type还不错哦
 input元素在div中居中的问题
 typescript
 https://stackblitz.com/ 不错的React在线环境
+GraphQL相对于Restful讲还是比较年轻，但是适合具备复杂间关系的情况，这点上可以避免Restful 设计上的接口臃肿
+CSS in JS 的emotion
+Next.js => React SSR
+Nuxt.js => Vue SSR
+Typescript
+ES 5与2009年完成标准化
+ES 6又称ES 2015，在2015年完成标准化。
+之前，真是傻了。
+position:relative可以保留div内点击事件：可以做到一些文字           >
+然后这样点右边也可以触发
 
 -------------
