@@ -1,62 +1,62 @@
-# ES5 实现const
+# CSS3 稍冷知识
 
-## 有关于node环境中的this问题
+不得不说CSS的琐碎点实在是有点儿多，看着啥记录啥的，望不断更新。
 
-事实证明，浏览器环境下全局this就是windows；而对于node.js环境，全局的this是空对象，实际上指代的是module.exports.而函数中或者说我们比较期待的那个this（姑且认为是nodejs运行环境？其实指的是global)
+> input 取消光圈+常规操作
 
-```js
-this.a = 3;
-console.log(this);
-console.log(global.a);
-function liao(){
-    this.a = 4;
-    console.log(global.a);
+```HTML
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+	<div class="liao">
+		<div class="liaoin">
+			<input type="text">
+		</div>
+	</div>
+</body>
+<style>
+.liao{
+	width: 100%;
+	height: 500px;
+	background-color: cadetblue;
+	position: relative;
 }
-liao();
+.liaoin{
+	position: absolute;
+	width: 800px;
+	height: 300px;
+	line-height: 300px;
+	margin: auto;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	background-color: azure;
+	text-align: center;
+}
+.liaoin input{
+	/* margin: auto; */
+	outline: none;
+	height: 20px;
+	line-height: 20px;
+	padding: 9px;
+}
+</style>
+</html>
 ```
 
-## Object.defineProperty来实现
+> CSS预处理语言Less
 
-其实这里还是拿windows环境来做测试的好。。。不过用nodejs也算学到了知识23333
+这个有时间再好好看下，只会用基础的orz
 
-```js
-//这里这个有意思了，也学习到了在node环境下是没有window的
-var __const = function __const(variable, value){
-    if(typeof(window) === "undefined"){ // 这里的判定注意下
-        console.log('运行在node环境下')
-        var window = global;
-        window.variable = value; //注意这里是挂载变量，不是挂载值
-    }
-    Object.defineProperty(window, variable, {
-        /*
-            这里补充一点关于js对象内置属性的知识
-            https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty
-        */
-        enumerable:true,
-        configurable:false,
-        // writable:true,//这里神了，虽然默认是false，但这里无论加的是writable:true还是writable:false都会报错
-        get:function(){
-            return value;
-        },
-        set:function(newval){
-            if(newval != value){
-                throw new TypeError('brelly bliaoliao');
-            }else{
-                return value;
-            }
-        }
-    })
-}
-__const('a', 5);
-console.log(global.a);
-delete a;//由于configurable，不可被删除
-console.log(a);
+> nth-of-child和nth-of-type
 
-for(var i in global){
-    if(i == 'a'){
-        console.log('此时是将enumerable设成了true');
-    }
-}
-//a = 6 //会报错
+p:nth-child(2) 要求该元素是p元素，且是父元素的第二个子元素
 
-```
+p:nth-of-type(2) 要求该元素是父元素下的第二个p元素

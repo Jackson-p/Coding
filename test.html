@@ -1,49 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Worker-倒计时</title>
+	<title>Document</title>
 	<style>
-		#container {
-			text-align: center;
-		}
-
-		#beginbtn {
-			padding: 5px;
-			background-color: cornsilk;
-			width: 100px;
-			font-weight: bold;
-			font-size: 16px;
-			outline: none;
+		.liaoliao:hover p{
+			color: red;
 		}
 	</style>
 </head>
-
 <body>
-	<div id="container">
-		<h1>liaoliao</h1>
-		<button id="beginbtn">计时开始</button>
-	</div>
-	<script>
-		var beginbtn = document.getElementById('beginbtn');
-		var content = document.getElementsByTagName('h1')[0];
-		beginbtn.onclick = function () {
-			if (window.Worker) {
-				console.log("Worker works");
-				var cntdown = new Worker('localhost:3000/test.js');
-				cntdown.onmessage = function (e) {
-					var cnt_time = e.data;
-					content.innerHTML = cnt_time;
-				}
-				beginbtn.disabled = true;
-			} else {
-				console.log('err');
-			}
-		}
-	</script>
+	<a class="liaoliao">
+		<p>brelly</p>
+		<p>bliaoliao</p>
+	</a>
 </body>
-
 </html>

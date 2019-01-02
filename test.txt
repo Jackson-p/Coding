@@ -1,41 +1,40 @@
 ------------
 
+demo:
+
+个人网站我觉得需要优化一下，从速度啊，打包啊，之类的
+轮播图组件实现
+
+-------------
+
 博文：
 
 jQuery里的trick和on源码
 
-轮播图组件实现
-
-require.js模块实现
+require.js源码分析
 
 vue源码分析
 
 React源码分析
--------------
-
-demo:
-
-使用node建立本地服务器访问静态文件，恩就是像python3 的http-server的那个效果
-个人网站我觉得需要优化一下，从速度啊，打包啊，之类的
 
 
--------------
+### 踩坑
 
-琐碎：
-less
-css里面的nth-of-child和nth-of-type还不错哦
-input元素在div中居中的问题
-typescript
-https://stackblitz.com/ 不错的React在线环境
-GraphQL相对于Restful讲还是比较年轻，但是适合具备复杂间关系的情况，这点上可以避免Restful 设计上的接口臃肿
-CSS in JS 的emotion
-Next.js => React SSR
-Nuxt.js => Vue SSR
-Typescript
-ES 5与2009年完成标准化
-ES 6又称ES 2015，在2015年完成标准化。
-之前，真是傻了。
-position:relative可以保留div内点击事件：可以做到一些文字           >
-然后这样点右边也可以触发
+* 和Vue不一样的React解析方式，想要在事件里传参需要先bind后额外传参数，没想到这个还真的很重要。否则就会有传说中的setState死循环刷新，那么好问题来了，我们为啥要先bind呢？
 
--------------
+https://www.baidu.com/s?ie=utf-8&f=8&rsv_bp=1&tn=baidu&wd=%E4%B8%BA%E4%BB%80%E4%B9%88react%E9%87%8C%E9%9D%A2%E7%9A%84%E4%BA%8B%E4%BB%B6%E8%A6%81%E5%86%99bind&oq=react%2520onclick%2520%25E4%25BC%25A0%25E5%258F%2582&rsv_pq=c8916b2500074067&rsv_t=ac60bU0kAtX7JcYPhLAWLbNe1qHT3eMIj3ro8Ph9HVr6SFkSyzLRltcttsA&rqlang=cn&rsv_enter=1&inputT=7715&rsv_sug3=213&rsv_sug1=105&rsv_sug7=100&rsv_sug2=0&rsv_sug4=8317
+
+https://www.jianshu.com/p/3d0e7513ad83
+
+https://blog.csdn.net/youyou_LIN/article/details/79673026
+
+好，第一个思考题：为什么需要这么写来回调参数，React和Vue为什么在这点上有不同，即React总在事件后要bind以下。
+
+
+* 在React生命周期中在取消挂载之后，仍然用取到的数据进行setState，会造成内存泄漏。
+
+https://www.jianshu.com/p/a9d1f5aa719a
+
+
+
+
