@@ -1,0 +1,4 @@
+个人网站解决issue问题 -> BGA
+学习redux redux版 todolist
+b站项目：React+router+Redux+Typescript+后端，比较完整的项目了（掘金）+ Node技术体系构建（掘金)
+Node企业官网实战（掘金）
