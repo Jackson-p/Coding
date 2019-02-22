@@ -1,4 +1,5 @@
-个人网站解决issue问题 -> BGA
-学习redux redux版 todolist
-b站项目：React+router+Redux+Typescript+后端，比较完整的项目了（掘金）+ Node技术体系构建（掘金)
-Node企业官网实战（掘金）
+PWA，Workbox3+webpack的组合使用，加强个人网站。
+两大项目一个是大众点评，一个是全栈项目+语雀前端九部搞定redux，redux重构个人网站？。
+vue+vue-router+vuex全家桶项目
+Node企业官网实战（掘金）。
+b站项目：React+router+Redux+Typescript+后端，比较完整的项目了（掘金）。
