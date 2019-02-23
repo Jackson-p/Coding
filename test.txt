@@ -1,4 +1,4 @@
-PWA，Workbox3+webpack的组合使用，加强个人网站。
+@--博文PWA，Workbox3+webpack的组合使用，加强个人网站。--@
 两大项目一个是大众点评，一个是全栈项目+语雀前端九部搞定redux，redux重构个人网站？。
 vue+vue-router+vuex全家桶项目
 Node企业官网实战（掘金）。
