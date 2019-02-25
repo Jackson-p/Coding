@@ -153,5 +153,46 @@ self.__precacheManifest = [
 ];
 ```
 
-好，那么我们想实现离线应用的入口就是webpack了，接着探索。。。。。
+注意以上是有缓存的相关代码的（由webpack构建好了），所以其实用workbox3+webpack可以比较简单地生成PWA应用，接着我们想实现离线应用的入口就是webpack了，接着探索。。。。。
 
+## 离线缓存
+
+通过学习，差不多知道了实现PWA（初步）有两种方式，第一种是通过webpack配插件，第二种是写自己的私人定制service-worker,于是我跑去将我的个人网站升级，只需做到以下两点：
+
+* 离线时用户可以加载上一次看到的任何内容（包括数据）
+* 做好那些静态资源的缓存
+
+我打算先尝试用第一种方式。
+
+
+webpack插件里先添加插件：
+
+```js
+new WorkboxPlugin.GenerateSW({
+    swDest: 'sw.js',
+    clientsClaim:true,
+    skipWaiting:true,
+    runtimeCaching:[{
+      urlPattern: new RegExp('https://api.github.com'),
+      handler: 'staleWhileRevalidate'
+    }]
+})
+```
+
+root.js里面加入注册代码
+
+```js
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js').then(registration => {
+        console.log('SW registered: ', registration);
+        }).catch(registrationError => {
+        console.log('SW registration failed: ', registrationError);
+        });
+    });
+}
+```
+
+[官方的在线测试](https://glitch.com/edit/#!/workbox-webpack?path=README.md:1:0)
+
+接下来的要挑战的这个项目的难点，其实在于webpack了。。。之前没用好orz
